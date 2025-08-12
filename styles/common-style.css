@@ -1,0 +1,154 @@
+/* ==================== */
+/* ТИПОГРАФИКА */
+/* ==================== */
+.text-gradient {
+  color: var(--theme-font);
+  background-image: var(--gradient-gold);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  letter-spacing: 2px;
+}
+
+/* ==================== */
+/* КОМПОНЕНТЫ ИНТЕРФЕЙСА */
+/* ==================== */
+.input-section {
+  background-color: var(--theme-input-bg);
+  border: 1px solid var(--theme-border);
+  border-radius: 8px;
+  padding: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 1.1rem;
+}
+
+.number-input {
+  background-color: var(--theme-input-bg);
+  border: 1px solid var(--theme-border);
+  color: var(--theme-font);
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-size: 1rem;
+  width: 80px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.slider-container {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.slider {
+  flex: 1;
+  height: 8px;
+  background: var(--theme-input-bg);
+  border-radius: 4px;
+  outline: none;
+  -webkit-appearance: none;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  background: var(--theme-border);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  background: var(--theme-border);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+button {
+  background: var(--gradient-button);
+  border: none;
+  color: #121212;
+  padding: 10px 20px;
+  font-size: 1.1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: 'Cinzel', serif;
+  font-weight: bold;
+  margin-top: 10px;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background: var(--gradient-button-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(210, 180, 140, 0.4);
+  background-clip: unset;
+  -webkit-background-clip: border-box;
+  -webkit-text-fill-color: unset;
+  color: var(--theme-bg);
+}
+
+.reset-btn {
+  background: var(--gradient-reset-button) !important;
+  margin-top: 20px !important;
+  color: #D2B48C;
+  background-clip: unset;
+  -webkit-background-clip: border-box;
+  -webkit-text-fill-color: unset;
+}
+
+.reset-btn:hover {
+  background: var(--gradient-reset-button-hover) !important;
+}
+
+/* Стилизация вертикальной полосы прокрутки */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 6px;
+    border: 1px solid rgba(210, 180, 140, 0.3);
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(
+        to bottom, 
+        #D2B48C,
+        #C4A77E,
+        #B69A70,
+        #A88D62,
+        #9A8054
+    );
+    border-radius: 6px;
+    border: 1px solid rgba(154, 128, 84, 0.5);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(
+        to bottom, 
+        #9A8054,
+        #A88D62,
+        #B69A70,
+        #C4A77E,
+        #D2B48C
+    );
+}
+
+/* Для Firefox */
+html {
+    scrollbar-width: thin;
+    scrollbar-color: #B69A70 rgba(0, 0, 0, 0.2);
+}

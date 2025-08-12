@@ -1,0 +1,36 @@
+:root {
+  --color-gold-light: #D2B48C;
+  --color-gold-1: #C4A77E;
+  --color-gold-2: #B69A70;
+  --color-gold-3: #A88D62;
+  --color-gold-dark: #9A8054;
+  
+  --theme-bg: #121212;
+  --theme-container: rgba(0, 0, 0, 0.7);
+  --theme-font: #D2B48C;
+  --theme-input-bg: rgba(210, 180, 140, 0.1);
+  --theme-border: #D2B48C;
+
+  --gradient-gold: linear-gradient(45deg,
+    var(--color-gold-light),
+    var(--color-gold-1),
+    var(--color-gold-2),
+    var(--color-gold-3),
+    var(--color-gold-dark));
+  
+  --gradient-button: linear-gradient(45deg,
+    var(--color-gold-dark),
+    var(--color-gold-3),
+    var(--color-gold-2));
+  
+  --gradient-button-hover: linear-gradient(45deg,
+    var(--color-gold-2),
+    var(--color-gold-1),
+    var(--color-gold-light));
+  
+  --gradient-reset-button: linear-gradient(45deg,
+    #5a3921, #6b4b32, #7d5d43);
+  
+  --gradient-reset-button-hover: linear-gradient(45deg,
+    #6b4b32, #7d5d43, #8e6e54);
+}
