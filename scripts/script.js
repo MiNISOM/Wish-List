@@ -21,7 +21,7 @@ window.addEventListener('DOMContentLoaded', () => {
         'Я есть сознание;' +
         'Все мои желания исполняются легко, мгновенно и самым наилучшим образом;' +
         'Всё, что я хочу, всё, что я желаю, всё, к чему я стремлюсь, само и легко идёт ко мне;' +
-        'Я всегда получаю то, что я хочу;' +
+        'Я всегда получаю всё, что я хочу;' +
         'Всё всегда происодит именно как я хочу;' +
         'У меня всё всегда получается;' +
         'Вселенная меня любит, она всегда за меня;' +
@@ -42,8 +42,6 @@ window.addEventListener('DOMContentLoaded', () => {
         localStorage.setItem('wishList', wishList);
     }
 
-    updateWishList();
-    
     const affirmationsArray = wishList.split(';').filter(item => item.trim() !== '');
     const listElement = document.querySelector('.list');
 
@@ -196,6 +194,7 @@ window.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    //updateWishList();
     function updateWishList() {
         wishList = 
         'Костелей Влад обожает меня, он любит меня больше всего на свете;' +
