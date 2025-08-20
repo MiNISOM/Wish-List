@@ -1,8 +1,4 @@
-window.addEventListener('DOMContentLoaded', () => {
-    // Проверяем и инициализируем список желаний
-    let wishList = localStorage.getItem('wishList');
-    if (!wishList) {
-        wishList = 
+const globalWishList = 
         'Костелей Влад обожает меня, он любит меня больше всего на свете;' +
         'Костелей Влад звонит мне каждую неделю и признаётся мне в любви;' +
         'Мама Костелея Влада позвонила и сообщила мне, что он приехал;' +
@@ -19,7 +15,7 @@ window.addEventListener('DOMContentLoaded', () => {
         'У меня всё всегда хорошо;' +
         'Я сама божественность;' +
         'Я есть сознание;' +
-        'Все мои желания исполняются легко, мгновенно и самым наилучшим образом;' +
+        'Все мои желания исполняются легко, мгновенно и самым наилучшим для меня образом;' +
         'Всё, что я хочу, всё, что я желаю, всё, к чему я стремлюсь, само и легко идёт ко мне;' +
         'Я всегда получаю всё, что я хочу;' +
         'Всё всегда происодит именно как я хочу;' +
@@ -39,15 +35,22 @@ window.addEventListener('DOMContentLoaded', () => {
         'Я думаю только хорошие мысли;' +
         'Я самый красивый и самый милый мальчик во всём мире;' +
         'Все обожают находиться рядом со мной;';
-        localStorage.setItem('wishList', wishList);
-    }
 
-    const affirmationsArray = wishList.split(';').filter(item => item.trim() !== '');
+window.addEventListener('DOMContentLoaded', () => {
+    // Проверяем и инициализируем список желаний
+    const localWishList = localStorage.getItem('localWishList') || '';
+    const wishList = localWishList + globalWishList;
+
+    const localAffirmationsArray = localWishList.split(';').filter(item => item.trim() !== '');
     const listElement = document.querySelector('.list');
 
     // Функция для рендеринга элементов списка
     function renderListItems() {
         listElement.innerHTML = '';
+        const localWishList = localStorage.getItem('localWishList') || '';
+        const wishList = localWishList + globalWishList;
+
+        const affirmationsArray = wishList.split(';').filter(item => item.trim() !== '');
         
         affirmationsArray.forEach((el, index) => {
             const itemContainer = document.createElement('div');
@@ -75,9 +78,6 @@ window.addEventListener('DOMContentLoaded', () => {
             itemContainer.appendChild(div);
             itemContainer.appendChild(deleteBtn);
             listElement.appendChild(itemContainer);
-            
-            if (index < affirmationsArray.length - 2) {
-            }
         });
     }
 
@@ -87,10 +87,10 @@ window.addEventListener('DOMContentLoaded', () => {
     // Функция удаления элемента
     function deleteItem(index) {
         // Удаляем из массива
-        affirmationsArray.splice(index, 1);
+        localAffirmationsArray.splice(index, 1);
         
         // Обновляем localStorage
-        localStorage.setItem('wishList', affirmationsArray.join(';') + ';');
+        localStorage.setItem('localWishList', localAffirmationsArray.join(';') + ';');
         
         // Перерисовываем список
         renderListItems();
@@ -143,10 +143,10 @@ window.addEventListener('DOMContentLoaded', () => {
         const newItemText = newItemInput.value.trim();
         if (newItemText) {
             // Добавляем в массив
-            affirmationsArray.splice(0, 0, newItemText); // Добавляем в начало
+            localAffirmationsArray.splice(0, 0, newItemText); // Добавляем в начало
             
             // Обновляем localStorage
-            localStorage.setItem('wishList', affirmationsArray.join(';') + ';');
+            localStorage.setItem('localWishList', localAffirmationsArray.join(';') + ';');
             
             // Перерисовываем список
             renderListItems();
