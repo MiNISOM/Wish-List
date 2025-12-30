@@ -113,8 +113,8 @@ window.addEventListener('DOMContentLoaded', () => {
     modal.innerHTML = `
         <div class="modal-content">
             <span class="close">&times;</span>
-            <h2 class="text-gradient">Добавить желание</h2>
-            <textarea id="newItemInput" placeholder="Введите ваше желание..." rows="4"></textarea>
+            <h2 class="text-gradient">Добавить дело</h2>
+            <textarea id="newItemInput" placeholder="Введите ваше дело..." rows="4"></textarea>
             <button id="submitNewItem" class="text-gradient">Добавить</button>
         </div>
     `;
